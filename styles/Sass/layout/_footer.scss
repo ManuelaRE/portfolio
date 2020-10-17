@@ -1,0 +1,60 @@
+@import '../abstracts/variables';
+@import '../base/typography';
+
+footer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    right: 0;
+    bottom: 55;
+    transform: rotate(90deg);
+
+    .break {
+        height: 2px;
+        width: 50px;
+        background-color: $egg-shell ;
+    }
+
+    .scroll-text {
+        color: $egg-shell;
+        font-family: $font-mont;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+    }
+}
+
+//-----------------------------------------------
+// Medium devices (tablets, 768px and up)
+// ----------------------------------------------
+@media (min-width: 768px) { 
+    .footer {
+        .scroll-text {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+//----------------------------------------------
+// Large devices (desktops, 992px and up)
+//----------------------------------------------
+@media (min-width: 992px) { 
+    .footer {
+        .scroll-text {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+//-------------------------------------------------------
+// Extra large devices (large desktops, 1200px and up)
+//-------------------------------------------------------
+@media (min-width: 1200px) {
+    .footer {
+        .scroll-text {
+            font-size: 2.2rem;
+        }
+    }
+}

@@ -1,166 +1,27 @@
-$main-green: #0a464b;
-$egg-shell: #f4f2ea;
-$pale-pink: #ffca9f;
-$brown: #2c2c2c;
-$font-mont: 'Montserrat', sans-serif;
-$font-source: 'Source Sans Pro', sans-serif;
-$font-manrope: 'Manrope', sans-serif;
-
-%page-set-up {
-    height: 100vh;
-    width: 100%;
-}
-
-%header {
-    font-family: $font-source;
-    font-size: 1.7rem;
-    padding-left: 15px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    transition: background-color 1s ease;
-    // border: 1px solid red;
-}
-
-body {
-    background: rgb(10,70,75);
-    background: linear-gradient(180deg, rgba(10,70,75,1) 21%, rgba(244,242,234,1) 36%, rgba(255,202,159,1) 85%);
-}
-
+@import './abstracts/variables';
+@import './base/reset';
+@import './base/typography';
+@import './components/hamburgerMenu';
+@import './layout/footer';
+//=============================
 /* PAGE ONE  */
-
-// nav bar
+//=============================
 
 .home-page {
     // background-color: $main-green;
     @extend %page-set-up;
-    
-    .hamburger-menu {
-        width: 55px;
-        height: 55px;
-        background-color: $pale-pink;
-        top: 30px;
-        right: 30px;
-        border: none;
-        border-radius: 50%;
-        outline: none;
-        cursor: pointer;
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 300;
-        // transition: all 0.5s;
-    }
-
-    .hamburger-menu:focus {
-        outline: none;
-    }
-
-    .change .hamburger-menu {
-        background-color: $main-green;
-        outline: none;
-    }
-
-    .line {
-        width: 30px;
-        height: 2px;
-        background-color: $main-green;
-        margin: 2px 0;
-        transform-origin: right;
-        transition: all 0.5s;
-    }
-    
-    .change .line-1 {
-        transform: rotate(-40deg) translateY(-5px);
-        background-color: $pale-pink;
-    }
-    
-    .change .line-2 {
-        opacity: 0;
-    }
-
-    .change .line-3 {
-        transform: rotate(40deg) translateY(5px);
-        background-color: $pale-pink;
-    }
-
-    .bg-cover {
-        background-color: $egg-shell;
-        width: 45px;
-        height: 45px;
-        top: 35px;
-        position: fixed;
-        right: 35px;
-        z-index: 100;
-        border-radius: 50%;
-        transition: transform 0.5s;
-    }
-
-
-    .change .bg-cover {
-        transform: scale(150);
-    }
-
-    .nav-list {
-        height:100vh;
-        width: 100%;
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        z-index: 200;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 1s;
-    }
-
-    .change .nav-list {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .nav-item {
-        margin: 1vh 0;
-    }
-    
-    .nav-link {
-        font-family: $font-mont;
-        font-weight: 600;
-        font-size: 2rem;
-        letter-spacing: 0.4rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $main-green;
-        transition: letter-spacing 0.2s;
-    }
-
-    .nav-link:hover {
-        letter-spacing: 0.8rem;
-    }
 }
 
-
 // main area
-
 .main-intro {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    // border: 2px solid orangered;
     grid-gap: 5px;
     margin: auto;
     height: 95vh;
 
     .intro-hello {
         margin: 30% 10% 0% 10%;
-        // border: 2px solid yellow;
 
         .greeting {
             font-family: $font-source;
@@ -171,7 +32,6 @@ body {
     }
 
     .intro-description {
-        // border: 2px solid yellow;
         display: flex;
         margin-left: 10%;
         margin-right: 10%;
@@ -179,7 +39,6 @@ body {
         img {
             width: 110px;
             height: 110px;
-            // border: 2px solid red;
         }
 
         h2 {
@@ -188,43 +47,16 @@ body {
             font-size: 1rem;
             letter-spacing: 0.2rem;
             color: $egg-shell;
-            // border: 2px solid red;
             text-align: left;
         }
     }
 }
 
-// Footer
-
-footer {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    right: 0;
-    bottom: 55;
-    transform: rotate(90deg);
-
-    .break {
-        height: 2px;
-        width: 50px;
-        background-color: $egg-shell ;
-    }
-
-    .scroll-text {
-        color: $egg-shell;
-        font-family: $font-mont;
-        font-weight: 400;
-        font-size: 1rem;
-        letter-spacing: 0.2rem;
-    }
-}
-
-
+//==========================
 // PAGE TWO - PROJECTS
+//==========================
 
 .projects-page {
-    // background-color: $egg-shell;
     @extend %page-set-up;
     height: fit-content;
 
@@ -239,19 +71,16 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-bottom:50px;
-    // border: 2px solid blue;
 
     .project {
         display: flex;
         flex-direction: column;
-        // border: 2px solid red;
         margin: 10px;
     
         img {
             width: 180px;
             height: auto;
             margin: 10px;
-            // border: 2px solid green;
         }
 
         .project-description {
@@ -259,7 +88,6 @@ footer {
             font-family: $font-manrope;
             font-weight: 300;
             color: $brown;
-            // border: 2px solid green;
 
             p {
                 text-align: center;
@@ -292,8 +120,9 @@ footer {
     
 }
 
-
+//===============================
 // PAGE THREE - ABOUT
+//===============================
 
 .about-page {
     // background-color: $pale-pink;
@@ -304,7 +133,6 @@ footer {
         @extend %header
     }
 }
-
 
 .about {
     display: grid;
@@ -317,7 +145,6 @@ footer {
     height: 70%;
     font-family: $font-mont;
     color: $brown;
-    // border: 2px solid green;
 
     .short-description {
         grid-area: abt;
@@ -326,7 +153,6 @@ footer {
         align-self: center;
         padding: 10px 20px 0 20px;
         font-size: 1.3rem;
-        // border: 2px solid red;
 
         .hidden {
             display: none;
@@ -337,13 +163,11 @@ footer {
         grid-area: photo;
         height: auto;
         width: 200px;
-        // border: 2px solid red;
         justify-self: center;
     }
 
     .goodbye {
         grid-area: call;
-        // border: 2px solid red;
         padding:10px 40px;
         font-size: 1.5rem;
 
@@ -353,7 +177,6 @@ footer {
 .contact {
     margin: 7px;;
     text-align: center;
-    // border: 2px solid red;
     button {
         background-color: $brown;
         font-size: 1.1rem;
@@ -404,76 +227,19 @@ footer {
     }
 }
 
+//=============================================
+// MEDIA QUERIES
+//=============================================
 
+
+//---------------------------------------------
 // Small devices (landscape phones, 576px and up) 
-
+//---------------------------------------------
 @media (min-width: 576px) {
     // page one
-    .hamburger-menu, .bg-cover {
-        visibility: hidden;
-    }
-
-    .home-page {
-        .scroll {
-            color: $main-green;
-        } 
-        
-        .nav-list {
-            visibility: visible;
-            opacity: 1;
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: row;
-            padding: 10px;
-            margin-top: 15px;
-            position: fixed;
-            width: 100%;
-            z-index: 5;
-            height: 0;
-
-            .nav-link {
-                text-transform: none;
-            }
-
-            .nav-item a {
-                text-decoration: none;
-                font-family: $font-mont;
-                font-weight: 400;
-                font-size: 1rem;
-                letter-spacing: 0.3rem;
-                color: $egg-shell;
-                padding: 10px;
-                position: relative;
-        
-                &:hover {
-                    color: $egg-shell;
-                }
-        
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 1.5px;
-                    bottom: 0;
-                    left: 0;
-                    background-color: $egg-shell;
-                    visibility: hidden;
-                    transition: scaleX(0);
-                    transition: all 0.1s ease-in-out 0s;
-                }
-        
-                &:hover::before {
-                    visibility: visible;
-                    transform: scaleX(1);
-                }
-            }
-        }
-    }
-
     .main-intro {
         .intro-hello {
             margin-top: 10%;
-
             .greeting {
                 font-size: 3.1rem;
             }
@@ -493,7 +259,6 @@ footer {
     }
 
     // page two
-
     .projects-page {
         height: fit-content;
     }
@@ -504,12 +269,9 @@ footer {
         justify-content: space-evenly;
     }
 
-
     // page three
-
     .about-page {
         position: relative;
-        // border: 2px solid yellow;
     }
 
     .about {
@@ -568,40 +330,28 @@ footer {
     }
 }
 
+//-----------------------------------------------
 // // Medium devices (tablets, 768px and up)
+//-----------------------------------------------
+
 @media (min-width: 768px) { 
     //page one
-    .home-page {
-        .nav-list {
-            .nav-item a {
-                font-size: 1.5rem;
-            }
-        }
-    }
-
     .main-intro {
         .intro-description {
             img {
                 width: 180px;
                 height: 180px;
             }
-
             h2 {
                 font-size: 1.5rem;
             }
         }
     }
 
-    .footer {
-        .scroll-text {
-            font-size: 1.5rem;
-        }
-    }
   // page two
 
     .projects-page {
         height: fit-content;
-
         .header-projects {
             font-size: 3rem;
         }
@@ -609,7 +359,6 @@ footer {
 
     .projects {
         margin-top: 5%;
-
         .project {
             img {
                 width: 250px;
@@ -618,7 +367,6 @@ footer {
     }
 
     // page three
-
     .about-page {
         .header-projects {
             font-size: 3rem;
@@ -655,13 +403,14 @@ footer {
 
 }
 
-// // Large devices (desktops, 992px and up)
+//--------------------------------------------
+// Large devices (desktops, 992px and up)
+//--------------------------------------------
 @media (min-width: 992px) { 
     //page one
     .main-intro {
         .intro-hello {
             margin-top: 10%;
-
             .greeting {
                 font-size: 5rem;
             }
@@ -672,17 +421,10 @@ footer {
                 width: 200px;
                 height: 200px;
             }
-
             h2 {
                 font-size: 2rem;
                 margin-right: 36%;
             }
-        }
-    }
-
-    .footer {
-        .scroll-text {
-            font-size: 2rem;
         }
     }
 
@@ -700,7 +442,6 @@ footer {
         grid-template-rows: 1fr 1fr;
         grid-template-columns:  1fr;
         margin-top: 0;
-        
         
         .project {
             justify-self: center;
@@ -829,14 +570,12 @@ footer {
     
 }
 
-
+//----------------------------------------------------------
 // // Extra large devices (large desktops, 1200px and up)
+//----------------------------------------------------------
 @media (min-width: 1200px) {
-
     // page one
-
     .main-intro {
-        // grid-template-rows: 1fr 1fr;
         .intro-hello {
             margin-top: 8%;
 
@@ -844,13 +583,11 @@ footer {
                 font-size: 7rem;
             }
         }
-
         .intro-description {
             img {
                 width: 280px;
                 height: 280px;
             }
-
             h2 {
                 font-size: 2.2rem;
                 margin-right: 50%;
@@ -858,14 +595,7 @@ footer {
         }
     }
 
-    .footer {
-        .scroll-text {
-            font-size: 2.2rem;
-        }
-    }
-
     //page two
-
     .projects-page {
         .header-projects {
             font-size: 5rem;
@@ -878,7 +608,6 @@ footer {
         .project {
             .end {
                 margin-right: 26%;
-
                 p {
                 font-size: 1.3rem;
                 }
@@ -893,12 +622,10 @@ footer {
                     font-size: 1.3em;
                 }
             }
-
             img {
                 width: 230px;
                 height: auto;
             }
-
             .project-image-one {
                 margin-left: 50%;
             }
@@ -906,28 +633,23 @@ footer {
             .project-image-two {
                 margin-left: -50%;
             }
-
-
             .button-right {
                 width: 100px;
                 margin: 15px 0 0 15px;
             }
-
             .button-left {
                 width: 100px;
                 margin: 15px 15px 0 0;
             }
-
             .project-two {
                 margin-bottom: 10px;
             }
         }
-
     }
 
        // page three
 
-        .about-page {
+    .about-page {
         .header-projects {
             font-size: 5rem;
         }
@@ -955,7 +677,6 @@ footer {
             font-size: 2.5rem;
             margin-left: 5%;
             width: 35%;
-            // margin-bottom: 6%;
             line-height: 1;
         }
     }
@@ -978,11 +699,9 @@ footer {
 
 @media (min-width: 1700px) {
     //page two
-
     .projects-page {
         height: fit-content;
     }
-
 
     // page three
     .about {
@@ -993,6 +712,3 @@ footer {
     }
 }
 
-.scroll {
-    color: $main-green;
-}

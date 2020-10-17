@@ -1,0 +1,23 @@
+@import '../base/typography';
+
+%page-set-up {
+    height: 100vh;
+    width: 100%;
+}
+
+%header {
+    font-family: $font-source;
+    font-size: 1.7rem;
+    padding-left: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(10,70,75,1) 21%, rgba(244,242,234,1) 36%, rgba(255,202,159,1) 85%);
+}
