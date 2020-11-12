@@ -17,7 +17,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, #0a464b 21%, #f4f2ea 36%, #ffca9f 85%);
+  background: linear-gradient(180deg, #0a464b 23%, #f4f2ea 34%, #ffca9f 100%);
 }
 
 .hamburger-menu {
@@ -310,6 +310,13 @@ footer .scroll-text {
 .projects .project .button:focus {
   outline: none;
 }
+.projects .project .button:hover {
+  background: #434343;
+}
+.projects .project .button a {
+  text-decoration: none;
+  color: #f4f2ea;
+}
 
 .about-page .header-projects {
   color: #0a464b;
@@ -333,14 +340,27 @@ footer .scroll-text {
   padding: 10px 20px 0 20px;
   font-size: 1.3rem;
 }
-.about .short-description .hidden {
-  display: none;
-}
-.about img {
+.about .profilePhoto {
   grid-area: photo;
-  height: auto;
-  width: 200px;
   justify-self: center;
+  position: relative;
+  display: inline-block;
+}
+.about .profilePhoto #two {
+  height: 700px;
+  width: 590px;
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+.about .profilePhoto #one {
+  height: 700px;
+  width: auto;
+  z-index: 0;
+}
+.about .profilePhoto:hover #two {
+  display: inline;
+  z-index: 1;
 }
 .about .goodbye {
   grid-area: call;
@@ -372,6 +392,9 @@ footer .scroll-text {
 .contact button a {
   text-decoration: none;
   color: #f4f2ea;
+}
+.contact button:hover {
+  background: #434343;
 }
 .contact .social-buttons .fa-3x {
   color: #0a464b;
@@ -446,8 +469,15 @@ footer .scroll-text {
     position: absolute;
     top: 0;
     right: 40%;
-    width: 190px;
     z-index: 1;
+  }
+  .about .profilePhoto #two {
+    height: 350px;
+    width: 295px;
+  }
+  .about .profilePhoto #one {
+    height: 350px;
+    width: auto;
   }
   .about .goodbye {
     height: 100%;
@@ -503,11 +533,19 @@ footer .scroll-text {
     font-size: 1.3rem;
     padding: 15px;
   }
-  .about img {
-    width: 250px;
+  .about .short-description .hidden {
+    visibility: hidden;
+  }
+  .about .profilePhoto #two {
+    height: 350px;
+    width: 295px;
+  }
+  .about .profilePhoto #one {
+    height: 350px;
+    width: auto;
   }
   .about .goodbye {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .contact button {
@@ -618,12 +656,16 @@ footer .scroll-text {
     padding: 15px;
     height: 69%;
   }
-  .about .short-description .hidden {
-    visibility: visible;
-  }
   .about img {
-    width: 300px;
     right: 45%;
+  }
+  .about .profilePhoto #two {
+    height: 550px;
+    width: 460px;
+  }
+  .about .profilePhoto #one {
+    height: 550px;
+    width: auto;
   }
   .about .goodbye {
     font-size: 2rem;
@@ -713,12 +755,16 @@ footer .scroll-text {
     line-height: 1.6;
     margin-left: 65%;
   }
-  .about .short-description .hidden {
-    visibility: visible;
-  }
   .about img {
-    width: 450px;
     right: 60%;
+  }
+  .about .profilePhoto #two {
+    height: 650px;
+    width: 549px;
+  }
+  .about .profilePhoto #one {
+    height: 650px;
+    width: auto;
   }
   .about .goodbye {
     font-size: 2.5rem;
@@ -748,5 +794,13 @@ footer .scroll-text {
   .about .goodbye {
     font-size: 2.7rem;
     line-height: 1.2;
+  }
+  .about .profilePhoto #two {
+    height: 700px;
+    width: 599px;
+  }
+  .about .profilePhoto #one {
+    height: 700px;
+    width: auto;
   }
 }

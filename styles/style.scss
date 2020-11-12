@@ -115,6 +115,15 @@
             &:focus {
                 outline: none;
             }
+
+            &:hover {
+                background: lighten($brown, 9%);
+            }
+
+            a {
+                text-decoration: none;
+                color: $egg-shell;
+            }
         }
     }
     
@@ -125,7 +134,6 @@
 //===============================
 
 .about-page {
-    // background-color: $pale-pink;
     @extend %page-set-up;
 
     .header-projects {
@@ -153,24 +161,43 @@
         align-self: center;
         padding: 10px 20px 0 20px;
         font-size: 1.3rem;
+        
+        // .hidden {
+        //     display: none;
+        // }
+    }
 
-        .hidden {
+    .profilePhoto {
+        grid-area: photo;
+        justify-self: center;
+        position: relative;
+        display: inline-block;
+        
+        #two{
+            height: 700px;
+            width: 590px;
             display: none;
+            position: absolute;
+            z-index: 2;
+        }
+        
+        #one {
+            height: 700px;
+            width: auto;
+            z-index: 0;
+        }
+
+        &:hover #two {
+            display: inline;
+            z-index: 1;
         }
     }
 
-    img {
-        grid-area: photo;
-        height: auto;
-        width: 200px;
-        justify-self: center;
-    }
 
     .goodbye {
         grid-area: call;
         padding:10px 40px;
         font-size: 1.5rem;
-
     }
 }
 
@@ -198,6 +225,10 @@
         a {
             text-decoration: none;
             color: $egg-shell;
+        }
+        
+        &:hover {
+            background: lighten($brown, 9%);
         }
     }
 
@@ -297,9 +328,23 @@
             position: absolute;
             top: 0;
             right: 40%;
-            width: 190px;
+            // width: 190px;
             z-index: 1;
         }
+
+        .profilePhoto {
+            #two{
+                height: 350px;
+                width: 295px;
+            }
+            
+            #one {
+                height: 350px;
+                width: auto;
+            }
+        }
+
+
 
         .goodbye {
             height: 100%;
@@ -377,14 +422,27 @@
         .short-description {
             font-size: 1.3rem;
             padding: 15px;
+
+            .hidden {
+                visibility: hidden;
+            }
         }
 
-        img {
-            width: 250px;
+
+        .profilePhoto {
+            #two{
+                height: 350px;
+                width: 295px;
+            }
+            
+            #one {
+                height: 350px;
+                width: auto;
+            }
         }
 
         .goodbye {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
     }
 
@@ -537,14 +595,25 @@
                 padding: 15px;
                 height: 69%;
 
-                .hidden {
-                    visibility: visible;
-                }
+                // .hidden {
+                //     // visibility: visible;
+                // }
             }
     
             img {
-                width: 300px;
                 right: 45%;
+            }
+
+            .profilePhoto {
+                #two{
+                    height: 550px;
+                    width: 460px;
+                }
+                
+                #one {
+                    height: 550px;
+                    width: auto;
+                }
             }
     
             .goodbye {
@@ -662,15 +731,22 @@
             height: 60%;
             line-height: 1.6;
             margin-left: 65%;
-
-            .hidden {
-                visibility: visible;
-            }
         }
 
         img {
-            width: 450px;
             right: 60%;
+        }
+
+        .profilePhoto {
+            #two{
+                height: 650px;
+                width: 549px;
+            }
+            
+            #one {
+                height: 650px;
+                width: auto;
+            }
         }
 
         .goodbye {
@@ -708,6 +784,17 @@
         .goodbye {
             font-size: 2.7rem;
             line-height: 1.2;
+        }
+        .profilePhoto {
+            #two{
+                height: 700px;
+                width: 599px;
+            }
+            
+            #one {
+                height: 700px;
+                width: auto;
+            }
         }
     }
 }
