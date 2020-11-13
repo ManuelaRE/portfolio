@@ -67,20 +67,26 @@
 }
 
 .projects {
+    // border: 2px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom:50px;
 
     .project {
+        // border: 2px solid red;
         display: flex;
         flex-direction: column;
         margin: 10px;
+        align-items: center;
+        
     
         img {
+            // border: 2px solid red;
             width: 180px;
             height: auto;
             margin: 10px;
+            
         }
 
         .project-description {
@@ -88,6 +94,7 @@
             font-family: $font-manrope;
             font-weight: 300;
             color: $brown;
+            min-width: 200px;
 
             p {
                 text-align: center;
@@ -145,7 +152,7 @@
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 300px auto;
     grid-template-areas: 
     "abt photo"
     "call call";
@@ -156,15 +163,14 @@
 
     .short-description {
         grid-area: abt;
-        height: 60%;
-        justify-content: center;
-        align-self: center;
-        padding: 10px 20px 0 20px;
+        padding: 35px 5px 0 5px;
         font-size: 1.3rem;
         
-        // .hidden {
-        //     display: none;
-        // }
+        .hidden {
+            visibility: hidden;
+            max-height: 0;
+            overflow:hidden;
+        }
     }
 
     .profilePhoto {
@@ -172,17 +178,22 @@
         justify-self: center;
         position: relative;
         display: inline-block;
+
+        img {
+            right: .05%;
+        }
+        
         
         #two{
-            height: 700px;
-            width: 590px;
+            height: 250px;
+            width: 210px;
             display: none;
             position: absolute;
             z-index: 2;
         }
         
         #one {
-            height: 700px;
+            height: 250px;
             width: auto;
             z-index: 0;
         }
@@ -190,14 +201,16 @@
         &:hover #two {
             display: inline;
             z-index: 1;
+            position: absolute;
         }
     }
 
 
     .goodbye {
         grid-area: call;
-        padding:10px 40px;
+        padding: 0 40px;
         font-size: 1.5rem;
+        
     }
 }
 
@@ -215,7 +228,7 @@
         text-decoration: none;
         cursor: pointer;
         margin: 20px auto;            
-        width: 270px;
+        width: 170px;
         border-radius: 15px;
 
         &:focus {
@@ -235,8 +248,8 @@
     .social-buttons {
         .fa-3x {
             color: $main-green;
-            margin-right: 30px;
-            margin-left: 30px;
+            margin-right: 15px;
+            margin-left: 15px;
             cursor: pointer;
         }
         
@@ -311,6 +324,8 @@
         right: 0;
         width: 70vw;
         height: 100%;
+        grid-template-rows: 200px auto;
+        grid-gap: 0;
 
         .short-description {
             position: absolute;
@@ -328,36 +343,28 @@
             position: absolute;
             top: 0;
             right: 40%;
-            // width: 190px;
             z-index: 1;
         }
 
         .profilePhoto {
-            #two{
-                height: 350px;
-                width: 295px;
-            }
-            
-            #one {
-                height: 350px;
-                width: auto;
+            #two, #one {
+                height: 300px;
+                width: 255px;
             }
         }
 
-
-
         .goodbye {
-            height: 100%;
             width: 50%;
             margin-left: 10%;
             font-size: 1.2rem;
             background-color: $egg-shell;
-            padding: 35px;
+            padding: 15px;
             z-index: 2;
         }
     }
 
     .contact {
+        padding-left: 15px;
         position: absolute;
         top:40%;
         margin: 0;
@@ -422,33 +429,40 @@
         .short-description {
             font-size: 1.3rem;
             padding: 15px;
+            margin-left: 60%;
+            line-height: 1.5;
 
             .hidden {
-                visibility: hidden;
+                visibility: visible;
+                overflow: visible;
             }
         }
 
 
         .profilePhoto {
-            #two{
-                height: 350px;
-                width: 295px;
+            #two {
+                height: 550px;
+                width: 465px;
             }
             
             #one {
-                height: 350px;
+                height: 550px;
                 width: auto;
             }
         }
 
         .goodbye {
-            font-size: 1.7rem;
+            font-size: 1.9rem;
+            margin-left: 0;
+            margin-top: 30%;
         }
     }
 
     .contact {
+        padding-left: 30px;
+
         button {
-            width: 230px;
+            width: 240px;
         }
         .social-buttons {
             .fa-3x {
@@ -457,13 +471,11 @@
             }
         }
     }
-
-
 }
 
-//--------------------------------------------
-// Large devices (desktops, 992px and up)
-//--------------------------------------------
+// //--------------------------------------------
+// // Large devices (desktops, 992px and up)
+// //--------------------------------------------
 @media (min-width: 992px) { 
     //page one
     .main-intro {
@@ -496,23 +508,33 @@
     }
 
     .projects {
+        // border: 2px solid red;
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns:  1fr;
         margin-top: 0;
+        padding: 0 5%;
         
         .project {
-            justify-self: center;
+            // border: 2px solid red;
+            // justify-self: stretch;
+            // align-self: stretch;
             border-bottom: 2px solid $brown;
-            padding-bottom: 40px;;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            // max-width: 700px;
+            padding: 0 5%;
 
             .end {
-                padding: 0 20px 0 40px;
-                display: flex; 
+                // border: 2px solid red;
+                // padding: 0 20px 0 40px;
+                // display: flex; 
                 flex-direction: column;
                 align-self: flex-end;  
-                justify-content: end; 
-                margin-right: 5%;
+                justify-content: flex-start; 
+                // margin-right: 5%;
 
                 p {
                 font-size: 1.1rem;
@@ -521,23 +543,19 @@
             }
     
             .start {
+                // border: 2px solid red;
                 width: 250px;
-                padding: 0 40px 0 20px;
-                display: flex; 
+                // padding: 0 40px 0 20px;
+                // display: flex; 
                 flex-direction: column;
                 align-self: flex-end;  
                 justify-content: start; 
-                margin-left: 10%;
+                // margin-left: 10%;
 
                 p {
                     text-align: start;
                     font-size: 1.1em;
                 }
-            }
-
-            img {
-                width: 200px;
-                height: auto;
             }
 
             .project-image-one {
@@ -593,11 +611,7 @@
             .short-description {
                 font-size: 1.3rem;
                 padding: 15px;
-                height: 69%;
-
-                // .hidden {
-                //     // visibility: visible;
-                // }
+                height: 60%;
             }
     
             img {
@@ -620,11 +634,12 @@
                 font-size: 2rem;
                 margin-left: 5%;
                 width: 45%;
+                margin-top: 20%;
+                padding: 2% 2% 0 2%
             }
         }
     
         .contact {
-            margin-left: 30px;
             button {
                 width: 270px;
                 padding: 10px;
@@ -639,9 +654,9 @@
     
 }
 
-//----------------------------------------------------------
-// // Extra large devices (large desktops, 1200px and up)
-//----------------------------------------------------------
+// //----------------------------------------------------------
+// // // Extra large devices (large desktops, 1200px and up)
+// //----------------------------------------------------------
 @media (min-width: 1200px) {
     // page one
     .main-intro {
@@ -673,17 +688,19 @@
     
 
     .projects {
+        padding: 0 10%;
         row-gap: 25px;
         .project {
+            // padding: 0 5%;
             .end {
-                margin-right: 26%;
+                margin-right: 27%;
                 p {
                 font-size: 1.3rem;
                 }
             }
     
             .start {
-                margin-left: 27%;
+                margin-right: 2%;
                 padding: 0 30px 0 20px;
 
                 p {
@@ -691,17 +708,17 @@
                     font-size: 1.3em;
                 }
             }
-            img {
-                width: 230px;
-                height: auto;
-            }
-            .project-image-one {
-                margin-left: 50%;
-            }
+            // img {
+            //     width: 230px;
+            //     height: auto;
+            // }
+            // .project-image-one {
+            //     margin-left: 50%;
+            // }
             
-            .project-image-two {
-                margin-left: -50%;
-            }
+            // .project-image-two {
+            //     margin-left: -50%;
+            // }
             .button-right {
                 width: 100px;
                 margin: 15px 0 0 15px;
@@ -754,6 +771,7 @@
             margin-left: 5%;
             width: 35%;
             line-height: 1;
+            padding: 3% 3% 0 3%
         }
     }
 
@@ -776,14 +794,27 @@
 @media (min-width: 1700px) {
     //page two
     .projects-page {
+        padding: 0 10%;
         height: fit-content;
+
+        .project {
+            padding: 0 5%;
+
+            .end {
+                margin-right: 36%;
+        }
+            .start {
+                margin-right: 2%;
+            }
     }
+}
 
     // page three
     .about {
         .goodbye {
             font-size: 2.7rem;
             line-height: 1.2;
+            padding: 3% 3% 0 3%
         }
         .profilePhoto {
             #two{
