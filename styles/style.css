@@ -274,6 +274,7 @@ footer .scroll-text {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  align-items: center;
 }
 .projects .project img {
   width: 180px;
@@ -285,6 +286,7 @@ footer .scroll-text {
   font-family: "Manrope", sans-serif;
   font-weight: 300;
   color: #2c2c2c;
+  min-width: 200px;
 }
 .projects .project .project-description p {
   text-align: center;
@@ -325,7 +327,7 @@ footer .scroll-text {
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 300px auto;
   grid-template-areas: "abt photo" "call call";
   grid-gap: 2px;
   height: 70%;
@@ -334,11 +336,13 @@ footer .scroll-text {
 }
 .about .short-description {
   grid-area: abt;
-  height: 60%;
-  justify-content: center;
-  align-self: center;
-  padding: 10px 20px 0 20px;
+  padding: 35px 5px 0 5px;
   font-size: 1.3rem;
+}
+.about .short-description .hidden {
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
 }
 .about .profilePhoto {
   grid-area: photo;
@@ -346,25 +350,29 @@ footer .scroll-text {
   position: relative;
   display: inline-block;
 }
+.about .profilePhoto img {
+  right: 0.05%;
+}
 .about .profilePhoto #two {
-  height: 700px;
-  width: 590px;
+  height: 250px;
+  width: 210px;
   display: none;
   position: absolute;
   z-index: 2;
 }
 .about .profilePhoto #one {
-  height: 700px;
+  height: 250px;
   width: auto;
   z-index: 0;
 }
 .about .profilePhoto:hover #two {
   display: inline;
   z-index: 1;
+  position: absolute;
 }
 .about .goodbye {
   grid-area: call;
-  padding: 10px 40px;
+  padding: 0 40px;
   font-size: 1.5rem;
 }
 
@@ -383,7 +391,7 @@ footer .scroll-text {
   text-decoration: none;
   cursor: pointer;
   margin: 20px auto;
-  width: 270px;
+  width: 170px;
   border-radius: 15px;
 }
 .contact button:focus {
@@ -398,8 +406,8 @@ footer .scroll-text {
 }
 .contact .social-buttons .fa-3x {
   color: #0a464b;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
   cursor: pointer;
 }
 .contact .social-buttons:link {
@@ -453,6 +461,8 @@ footer .scroll-text {
     right: 0;
     width: 70vw;
     height: 100%;
+    grid-template-rows: 200px auto;
+    grid-gap: 0;
   }
   .about .short-description {
     position: absolute;
@@ -471,25 +481,21 @@ footer .scroll-text {
     right: 40%;
     z-index: 1;
   }
-  .about .profilePhoto #two {
-    height: 350px;
-    width: 295px;
-  }
-  .about .profilePhoto #one {
-    height: 350px;
-    width: auto;
+  .about .profilePhoto #two, .about .profilePhoto #one {
+    height: 300px;
+    width: 255px;
   }
   .about .goodbye {
-    height: 100%;
     width: 50%;
     margin-left: 10%;
     font-size: 1.2rem;
     background-color: #f4f2ea;
-    padding: 35px;
+    padding: 15px;
     z-index: 2;
   }
 
   .contact {
+    padding-left: 15px;
     position: absolute;
     top: 40%;
     margin: 0;
@@ -532,24 +538,32 @@ footer .scroll-text {
   .about .short-description {
     font-size: 1.3rem;
     padding: 15px;
+    margin-left: 60%;
+    line-height: 1.5;
   }
   .about .short-description .hidden {
-    visibility: hidden;
+    visibility: visible;
+    overflow: visible;
   }
   .about .profilePhoto #two {
-    height: 350px;
-    width: 295px;
+    height: 550px;
+    width: 465px;
   }
   .about .profilePhoto #one {
-    height: 350px;
+    height: 550px;
     width: auto;
   }
   .about .goodbye {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
+    margin-left: 0;
+    margin-top: 30%;
   }
 
+  .contact {
+    padding-left: 30px;
+  }
   .contact button {
-    width: 230px;
+    width: 240px;
   }
   .contact .social-buttons .fa-3x {
     margin-right: 20px;
@@ -581,19 +595,20 @@ footer .scroll-text {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
     margin-top: 0;
+    padding: 0 5%;
   }
   .projects .project {
-    justify-self: center;
     border-bottom: 2px solid #2c2c2c;
     padding-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 5%;
   }
   .projects .project .end {
-    padding: 0 20px 0 40px;
-    display: flex;
     flex-direction: column;
     align-self: flex-end;
-    justify-content: end;
-    margin-right: 5%;
+    justify-content: flex-start;
   }
   .projects .project .end p {
     font-size: 1.1rem;
@@ -601,20 +616,13 @@ footer .scroll-text {
   }
   .projects .project .start {
     width: 250px;
-    padding: 0 40px 0 20px;
-    display: flex;
     flex-direction: column;
     align-self: flex-end;
     justify-content: start;
-    margin-left: 10%;
   }
   .projects .project .start p {
     text-align: start;
     font-size: 1.1em;
-  }
-  .projects .project img {
-    width: 200px;
-    height: auto;
   }
   .projects .project .project-image-one {
     margin-left: 15%;
@@ -654,7 +662,7 @@ footer .scroll-text {
   .about .short-description {
     font-size: 1.3rem;
     padding: 15px;
-    height: 69%;
+    height: 60%;
   }
   .about img {
     right: 45%;
@@ -671,11 +679,10 @@ footer .scroll-text {
     font-size: 2rem;
     margin-left: 5%;
     width: 45%;
+    margin-top: 20%;
+    padding: 2% 2% 0 2%;
   }
 
-  .contact {
-    margin-left: 30px;
-  }
   .contact button {
     width: 270px;
     padding: 10px;
@@ -706,31 +713,22 @@ footer .scroll-text {
   }
 
   .projects {
+    padding: 0 10%;
     row-gap: 25px;
   }
   .projects .project .end {
-    margin-right: 26%;
+    margin-right: 27%;
   }
   .projects .project .end p {
     font-size: 1.3rem;
   }
   .projects .project .start {
-    margin-left: 27%;
+    margin-right: 2%;
     padding: 0 30px 0 20px;
   }
   .projects .project .start p {
     padding: 0;
     font-size: 1.3em;
-  }
-  .projects .project img {
-    width: 230px;
-    height: auto;
-  }
-  .projects .project .project-image-one {
-    margin-left: 50%;
-  }
-  .projects .project .project-image-two {
-    margin-left: -50%;
   }
   .projects .project .button-right {
     width: 100px;
@@ -771,6 +769,7 @@ footer .scroll-text {
     margin-left: 5%;
     width: 35%;
     line-height: 1;
+    padding: 3% 3% 0 3%;
   }
 
   .contact {
@@ -788,12 +787,23 @@ footer .scroll-text {
 }
 @media (min-width: 1700px) {
   .projects-page {
+    padding: 0 10%;
     height: fit-content;
+  }
+  .projects-page .project {
+    padding: 0 5%;
+  }
+  .projects-page .project .end {
+    margin-right: 36%;
+  }
+  .projects-page .project .start {
+    margin-right: 2%;
   }
 
   .about .goodbye {
     font-size: 2.7rem;
     line-height: 1.2;
+    padding: 3% 3% 0 3%;
   }
   .about .profilePhoto #two {
     height: 700px;
