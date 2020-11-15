@@ -18,7 +18,7 @@
     grid-template-rows: 1fr 1fr;
     grid-gap: 5px;
     margin: auto;
-    height: 95vh;
+    height: 93vh;
 
     .intro-hello {
         margin: 30% 10% 0% 10%;
@@ -28,7 +28,7 @@
             color: $pale-pink;
             font-size: 3.5rem;
             letter-spacing: 0px;
-        }    
+        }
     }
 
     .intro-description {
@@ -67,26 +67,23 @@
 }
 
 .projects {
-    // border: 2px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom:50px;
+    margin-bottom: 50px;
 
     .project {
-        // border: 2px solid red;
         display: flex;
         flex-direction: column;
         margin: 10px;
         align-items: center;
-        
-    
+
+
         img {
-            // border: 2px solid red;
             width: 180px;
             height: auto;
             margin: 10px;
-            
+
         }
 
         .project-description {
@@ -106,9 +103,10 @@
             flex-wrap: nowrap;
             margin: 0 auto;
         }
+
         .button {
             background-color: $brown;
-            color:$egg-shell;
+            color: $egg-shell;
             font-family: $font-manrope;
             border: none;
             padding: 10px;
@@ -133,7 +131,7 @@
             }
         }
     }
-    
+
 }
 
 //===============================
@@ -153,9 +151,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px auto;
-    grid-template-areas: 
-    "abt photo"
-    "call call";
+    grid-template-areas:
+        "abt photo"
+        "call call";
     grid-gap: 2px;
     height: 70%;
     font-family: $font-mont;
@@ -165,11 +163,11 @@
         grid-area: abt;
         padding: 35px 5px 0 5px;
         font-size: 1.3rem;
-        
+
         .hidden {
             visibility: hidden;
             max-height: 0;
-            overflow:hidden;
+            overflow: hidden;
         }
     }
 
@@ -182,16 +180,16 @@
         img {
             right: .05%;
         }
-        
-        
-        #two{
+
+
+        #two {
             height: 250px;
             width: 210px;
             display: none;
             position: absolute;
             z-index: 2;
         }
-        
+
         #one {
             height: 250px;
             width: auto;
@@ -210,24 +208,26 @@
         grid-area: call;
         padding: 0 40px;
         font-size: 1.5rem;
-        
+
     }
 }
 
 .contact {
-    margin: 7px;;
+    margin: 7px;
+    ;
     text-align: center;
+
     button {
         background-color: $brown;
         font-size: 1.1rem;
-        color:$egg-shell;
+        color: $egg-shell;
         font-family: $font-mont;
         border: none;
         padding: 8px;
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        margin: 20px auto;            
+        margin: 20px auto;
         width: 170px;
         border-radius: 15px;
 
@@ -239,7 +239,7 @@
             text-decoration: none;
             color: $egg-shell;
         }
-        
+
         &:hover {
             background: lighten($brown, 9%);
         }
@@ -252,7 +252,7 @@
             margin-left: 15px;
             cursor: pointer;
         }
-        
+
         &:link {
             color: $main-green;
         }
@@ -265,7 +265,9 @@
             color: $main-green;
         }
     }
-    .a:hover, .fa-3x:hover {
+
+    .a:hover,
+    .fa-3x:hover {
         transform: scale(1.1);
         color: $brown;
     }
@@ -280,10 +282,12 @@
 // Small devices (landscape phones, 576px and up) 
 //---------------------------------------------
 @media (min-width: 576px) {
+
     // page one
     .main-intro {
         .intro-hello {
             margin-top: 10%;
+
             .greeting {
                 font-size: 3.1rem;
             }
@@ -306,6 +310,7 @@
     .projects-page {
         height: fit-content;
     }
+
     .projects {
         display: flex;
         flex-direction: row;
@@ -347,7 +352,9 @@
         }
 
         .profilePhoto {
-            #two, #one {
+
+            #two,
+            #one {
                 height: 300px;
                 width: 255px;
             }
@@ -366,7 +373,7 @@
     .contact {
         padding-left: 15px;
         position: absolute;
-        top:40%;
+        top: 40%;
         margin: 0;
 
         button {
@@ -386,7 +393,8 @@
 // // Medium devices (tablets, 768px and up)
 //-----------------------------------------------
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
+
     //page one
     .main-intro {
         .intro-description {
@@ -394,16 +402,18 @@
                 width: 180px;
                 height: 180px;
             }
+
             h2 {
                 font-size: 1.5rem;
             }
         }
     }
 
-  // page two
+    // page two
 
     .projects-page {
         height: fit-content;
+
         .header-projects {
             font-size: 3rem;
         }
@@ -411,6 +421,7 @@
 
     .projects {
         margin-top: 5%;
+
         .project {
             img {
                 width: 250px;
@@ -444,7 +455,7 @@
                 height: 550px;
                 width: 465px;
             }
-            
+
             #one {
                 height: 550px;
                 width: auto;
@@ -464,6 +475,7 @@
         button {
             width: 240px;
         }
+
         .social-buttons {
             .fa-3x {
                 margin-right: 20px;
@@ -476,11 +488,13 @@
 // //--------------------------------------------
 // // Large devices (desktops, 992px and up)
 // //--------------------------------------------
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
+
     //page one
     .main-intro {
         .intro-hello {
             margin-top: 10%;
+
             .greeting {
                 font-size: 5rem;
             }
@@ -491,6 +505,7 @@
                 width: 200px;
                 height: 200px;
             }
+
             h2 {
                 font-size: 2rem;
                 margin-right: 36%;
@@ -499,58 +514,44 @@
     }
 
     // page two
-
     .projects-page {
         .header-projects {
             font-size: 3.5rem;
         }
-        
+
     }
 
     .projects {
-        // border: 2px solid red;
         display: grid;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns:  1fr;
+        grid-template-columns: 1fr;
         margin-top: 0;
         padding: 0 5%;
-        
+
         .project {
-            // border: 2px solid red;
-            // justify-self: stretch;
-            // align-self: stretch;
             border-bottom: 2px solid $brown;
             padding-bottom: 40px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            // max-width: 700px;
             padding: 0 5%;
 
             .end {
-                // border: 2px solid red;
-                // padding: 0 20px 0 40px;
-                // display: flex; 
                 flex-direction: column;
-                align-self: flex-end;  
-                justify-content: flex-start; 
-                // margin-right: 5%;
+                align-self: flex-end;
+                justify-content: flex-start;
 
                 p {
-                font-size: 1.1rem;
-                text-align: right;
+                    font-size: 1.1rem;
+                    text-align: right;
                 }
             }
-    
+
             .start {
-                // border: 2px solid red;
                 width: 250px;
-                // padding: 0 40px 0 20px;
-                // display: flex; 
                 flex-direction: column;
-                align-self: flex-end;  
-                justify-content: start; 
-                // margin-left: 10%;
+                align-self: flex-end;
+                justify-content: start;
 
                 p {
                     text-align: start;
@@ -561,7 +562,7 @@
             .project-image-one {
                 margin-left: 15%;
             }
-            
+
             .project-image-two {
                 margin-right: 15%;
             }
@@ -599,65 +600,67 @@
         }
     }
 
-        // page three
+    // page three
 
-        .about-page {
-            .header-projects {
-                font-size: 3.5rem;
-            }
+    .about-page {
+        .header-projects {
+            font-size: 3.5rem;
         }
-    
-        .about {
-            .short-description {
-                font-size: 1.3rem;
-                padding: 15px;
-                height: 60%;
-            }
-    
-            img {
-                right: 45%;
+    }
+
+    .about {
+        .short-description {
+            font-size: 1.3rem;
+            padding: 15px;
+            height: 60%;
+        }
+
+        img {
+            right: 45%;
+        }
+
+        .profilePhoto {
+            #two {
+                height: 550px;
+                width: 460px;
             }
 
-            .profilePhoto {
-                #two{
-                    height: 550px;
-                    width: 460px;
-                }
-                
-                #one {
-                    height: 550px;
-                    width: auto;
-                }
-            }
-    
-            .goodbye {
-                font-size: 2rem;
-                margin-left: 5%;
-                width: 45%;
-                margin-top: 20%;
-                padding: 2% 2% 0 2%
+            #one {
+                height: 550px;
+                width: auto;
             }
         }
-    
-        .contact {
-            button {
-                width: 270px;
-                padding: 10px;
-            }
-            .social-buttons {
-                .fa-3x {
-                    margin-right: 25px;
-                    margin-left: 25px;
-                }
+
+        .goodbye {
+            font-size: 2rem;
+            margin-left: 5%;
+            width: 45%;
+            margin-top: 20%;
+            padding: 2% 2% 0 2%
+        }
+    }
+
+    .contact {
+        button {
+            width: 270px;
+            padding: 10px;
+        }
+
+        .social-buttons {
+            .fa-3x {
+                margin-right: 25px;
+                margin-left: 25px;
             }
         }
-    
+    }
+
 }
 
 // //----------------------------------------------------------
 // // // Extra large devices (large desktops, 1200px and up)
 // //----------------------------------------------------------
 @media (min-width: 1200px) {
+
     // page one
     .main-intro {
         .intro-hello {
@@ -667,11 +670,13 @@
                 font-size: 7rem;
             }
         }
+
         .intro-description {
             img {
                 width: 280px;
                 height: 280px;
             }
+
             h2 {
                 font-size: 2.2rem;
                 margin-right: 50%;
@@ -685,20 +690,21 @@
             font-size: 5rem;
         }
     }
-    
+
 
     .projects {
         padding: 0 10%;
         row-gap: 25px;
+
         .project {
-            // padding: 0 5%;
             .end {
                 margin-right: 27%;
+
                 p {
-                font-size: 1.3rem;
+                    font-size: 1.3rem;
                 }
             }
-    
+
             .start {
                 margin-right: 2%;
                 padding: 0 30px 0 20px;
@@ -708,32 +714,23 @@
                     font-size: 1.3em;
                 }
             }
-            // img {
-            //     width: 230px;
-            //     height: auto;
-            // }
-            // .project-image-one {
-            //     margin-left: 50%;
-            // }
-            
-            // .project-image-two {
-            //     margin-left: -50%;
-            // }
             .button-right {
                 width: 100px;
                 margin: 15px 0 0 15px;
             }
+
             .button-left {
                 width: 100px;
                 margin: 15px 15px 0 0;
             }
+
             .project-two {
                 margin-bottom: 10px;
             }
         }
     }
 
-       // page three
+    // page three
 
     .about-page {
         .header-projects {
@@ -755,11 +752,11 @@
         }
 
         .profilePhoto {
-            #two{
+            #two {
                 height: 650px;
                 width: 549px;
             }
-            
+
             #one {
                 height: 650px;
                 width: auto;
@@ -777,10 +774,12 @@
 
     .contact {
         margin-left: 5%;
+
         button {
             width: 300px;
             padding: 12px;
         }
+
         .social-buttons {
             .fa-3x {
                 margin-right: 30px;
@@ -792,22 +791,27 @@
 }
 
 @media (min-width: 1700px) {
+
     //page two
     .projects-page {
-        padding: 0 10%;
         height: fit-content;
+        .projects {
+            padding: 0 15%;
 
-        .project {
-            padding: 0 5%;
-
-            .end {
-                margin-right: 36%;
-        }
-            .start {
-                margin-right: 2%;
+            .project {
+                padding: 0 5%;
+    
+                .end {
+                    margin-right: 36%;
+                }
+    
+                .start {
+                    margin-right: 2%;
+                }
             }
+        }
+        
     }
-}
 
     // page three
     .about {
@@ -816,12 +820,13 @@
             line-height: 1.2;
             padding: 3% 3% 0 3%
         }
+
         .profilePhoto {
-            #two{
+            #two {
                 height: 700px;
                 width: 599px;
             }
-            
+
             #one {
                 height: 700px;
                 width: auto;
@@ -829,4 +834,3 @@
         }
     }
 }
-

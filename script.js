@@ -52,27 +52,27 @@ let timerId = setInterval(newWord, 2000);
 // Hamburger menu
 //========================================================
 
-const burgerMenu = document.querySelector(".hamburger-menu");
-const navList = document.querySelector(".nav-list");
+/* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
 
-burgerMenu.addEventListener("click", () => {
-  document.querySelector(".navigation").classList.toggle("change");
-});
-
-navList.addEventListener("click", () => {
-  document.querySelector(".navigation").classList.toggle("change");
-});
+/* Close when someone clicks on the "x" symbol inside the overlay or any of the links*/
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
 
 
 //===================================================
 // Navbar color change
 //===================================================
 
-const tagOne = document.querySelectorAll('.nav-list li a')[0];
-const tagTwo = document.querySelectorAll('.nav-list li a')[1];
-const tagThree = document.querySelectorAll('.nav-list li a')[2];
+const tagOne = document.querySelectorAll('.overlay-content a')[0];
+const tagTwo = document.querySelectorAll('.overlay-content a')[1];
+const tagThree = document.querySelectorAll('.overlay-content a')[2];
 
-let windowHeight =window.innerHeight || (document.documentElement || document.body).clientHeight;
+console.log(tagOne)
+let windowHeight = window.innerHeight || (document.documentElement || document.body).clientHeight;
 
 const runOnResize = () => {
   windowHeight = window.innerHeight || (document.documentElement || document.body).clientHeight;
@@ -93,3 +93,6 @@ const runOnScroll = () => {
 }; 
 
 window.addEventListener("scroll", runOnScroll);
+
+
+
