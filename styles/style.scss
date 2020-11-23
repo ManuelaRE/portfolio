@@ -8,7 +8,7 @@
 //=============================
 
 .home-page {
-    // background-color: $main-green;
+    background-color: $main-green;
     @extend %page-set-up;
 }
 
@@ -83,6 +83,23 @@
             width: 180px;
             height: auto;
             margin: 10px;
+
+            -webkit-box-shadow: $card-shadow;
+
+            box-shadow: $card-shadow;
+            border-radius: 10px;
+
+            -webkit-animation-name: shadow-show;
+            /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 1.5s;
+            /* Safari 4.0 - 8.0 */
+            animation-name: shadow-show;
+            animation-duration: 1.5s;
+
+            -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+            -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+            transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+            /* custom */
 
         }
 
@@ -530,11 +547,11 @@
 
         .project {
             border-bottom: 2px solid $brown;
-            padding-bottom: 40px;
+            // padding-bottom: 40px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 0 5%;
+            padding: 2% 5%;
 
             .end {
                 flex-direction: column;
@@ -714,6 +731,7 @@
                     font-size: 1.3em;
                 }
             }
+
             .button-right {
                 width: 100px;
                 margin: 15px 0 0 15px;
@@ -795,22 +813,23 @@
     //page two
     .projects-page {
         height: fit-content;
+
         .projects {
             padding: 0 15%;
 
             .project {
-                padding: 0 5%;
-    
+                padding: 2% 5%;
+
                 .end {
                     margin-right: 36%;
                 }
-    
+
                 .start {
                     margin-right: 2%;
                 }
             }
         }
-        
+
     }
 
     // page three

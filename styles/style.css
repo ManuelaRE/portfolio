@@ -17,7 +17,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, #0a464b 23%, #f4f2ea 34%, #ffca9f 100%);
+  background: linear-gradient(0deg, #ffca9f 20%, #f4f2ea 61%);
 }
 
 /* The Overlay (background) */
@@ -152,6 +152,10 @@ footer .scroll-text {
   }
 }
 /* PAGE ONE  */
+.home-page {
+  background-color: #0a464b;
+}
+
 .main-intro {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -209,6 +213,19 @@ footer .scroll-text {
   width: 180px;
   height: auto;
   margin: 10px;
+  -webkit-box-shadow: -20px -20px 0px 0px #ffd8b9;
+  box-shadow: -20px -20px 0px 0px #ffd8b9;
+  border-radius: 10px;
+  -webkit-animation-name: shadow-show;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: shadow-show;
+  animation-duration: 1.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+  -o-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+  transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+  /* custom */
 }
 .projects .project .project-description {
   margin: 5px;
@@ -530,11 +547,10 @@ footer .scroll-text {
   }
   .projects .project {
     border-bottom: 2px solid #2c2c2c;
-    padding-bottom: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 5%;
+    padding: 2% 5%;
   }
   .projects .project .end {
     flex-direction: column;
@@ -724,7 +740,7 @@ footer .scroll-text {
     padding: 0 15%;
   }
   .projects-page .projects .project {
-    padding: 0 5%;
+    padding: 2% 5%;
   }
   .projects-page .projects .project .end {
     margin-right: 36%;
