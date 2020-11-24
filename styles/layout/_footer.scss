@@ -29,7 +29,7 @@ footer {
 // Medium devices (tablets, 768px and up)
 // ----------------------------------------------
 @media (min-width: 768px) { 
-    .footer {
+    footer {
         .scroll-text {
             font-size: 1.5rem;
         }
@@ -40,7 +40,7 @@ footer {
 // Large devices (desktops, 992px and up)
 //----------------------------------------------
 @media (min-width: 992px) { 
-    .footer {
+    footer {
         .scroll-text {
             font-size: 2rem;
         }
@@ -52,9 +52,9 @@ footer {
 // Extra large devices (large desktops, 1200px and up)
 //-------------------------------------------------------
 @media (min-width: 1200px) {
-    .footer {
+    footer {
         .scroll-text {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
         }
     }
 }

@@ -80,7 +80,7 @@ var runOnResize = function runOnResize() {
 window.addEventListener("resize", runOnResize);
 
 var runOnScroll = function runOnScroll() {
-  if (document.body.scrollTop > windowHeight) {
+  if (document.body.scrollTop >= windowHeight) {
     tagOne.style.color = "#0a464b";
     tagTwo.style.color = "#0a464b";
     tagThree.style.color = "#0a464b";

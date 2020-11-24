@@ -4,6 +4,7 @@ footer {
   flex-direction: row;
   align-items: center;
   right: 0;
+  bottom: 55;
   transform: rotate(90deg);
 }
 footer .break {
@@ -20,17 +21,17 @@ footer .scroll-text {
 }
 
 @media (min-width: 768px) {
-  .footer .scroll-text {
+  footer .scroll-text {
     font-size: 1.5rem;
   }
 }
 @media (min-width: 992px) {
-  .footer .scroll-text {
+  footer .scroll-text {
     font-size: 2rem;
   }
 }
 @media (min-width: 1200px) {
-  .footer .scroll-text {
-    font-size: 2.2rem;
+  footer .scroll-text {
+    font-size: 1.8rem;
   }
 }

@@ -92,3 +92,8 @@
     font-size: 1.5rem;
   }
 }
+@media (min-width: 1700px) {
+  .home-page .header-home .overlay .overlay-content a {
+    font-size: 2.7em;
+  }
+}
