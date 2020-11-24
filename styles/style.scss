@@ -8,7 +8,7 @@
 //=============================
 
 .home-page {
-    // background-color: $main-green;
+    background-color: $main-green;
     @extend %page-set-up;
 }
 
@@ -75,7 +75,7 @@
     .project {
         display: flex;
         flex-direction: column;
-        margin: 10px;
+        margin: 20px;
         align-items: center;
 
 
@@ -83,7 +83,19 @@
             width: 180px;
             height: auto;
             margin: 10px;
-
+            -webkit-box-shadow: $card-shadow;
+            box-shadow: $card-shadow;
+            border-radius: 10px;
+            -webkit-animation-name: shadow-show;
+            /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 1.5s;
+            /* Safari 4.0 - 8.0 */
+            animation-name: shadow-show;
+            animation-duration: 1.5s;
+            -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+            -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+            transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+            /* custom */
         }
 
         .project-description {
@@ -93,8 +105,41 @@
             color: $brown;
             min-width: 200px;
 
-            p {
+            p, .project-icons {
                 text-align: center;
+            }
+
+            .project-icons {
+                margin: 2% 0;
+                color: $brown;
+
+                .fa-2x {
+                    margin: 2%;
+                }
+
+                .fa-react:hover {
+                    color: $react;
+                }
+
+                .fa-database:hover, .fa-sign-in-alt:hover {
+                    color: $database;
+                }
+
+                .fa-sass:hover {
+                    color: $sass;
+                }
+
+                .fa-node:hover {
+                    color: $node;
+                }
+
+                .fa-js-square:hover {
+                    color: $javascript;
+                }
+
+                .fa-angular:hover {
+                    color: $angular;
+                }
             }
         }
 
@@ -128,6 +173,7 @@
             a {
                 text-decoration: none;
                 color: $egg-shell;
+                font-size: 14px;
             }
         }
     }
@@ -150,12 +196,12 @@
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px auto;
+    grid-template-rows: 2fr 1fr;
     grid-template-areas:
         "abt photo"
         "call call";
     grid-gap: 2px;
-    height: 70%;
+    height: 60%;
     font-family: $font-mont;
     color: $brown;
 
@@ -177,22 +223,27 @@
         position: relative;
         display: inline-block;
 
+
         img {
-            right: .05%;
+            right: .005%;
+            max-width: 100%;
+            height: 90%;
+            max-height: 90%;
+            // display: block;
         }
 
 
         #two {
-            height: 250px;
-            width: 210px;
+            // height: 250px;
+            // width: 210px;
             display: none;
             position: absolute;
             z-index: 2;
         }
 
         #one {
-            height: 250px;
-            width: auto;
+            // height: 250px;
+            // width: auto;
             z-index: 0;
         }
 
@@ -203,12 +254,10 @@
         }
     }
 
-
     .goodbye {
         grid-area: call;
         padding: 0 40px;
         font-size: 1.5rem;
-
     }
 }
 
@@ -228,7 +277,7 @@
         text-decoration: none;
         cursor: pointer;
         margin: 20px auto;
-        width: 170px;
+        // width: 170px;
         border-radius: 15px;
 
         &:focus {
@@ -238,6 +287,7 @@
         a {
             text-decoration: none;
             color: $egg-shell;
+            font-size: 20px;
         }
 
         &:hover {
@@ -281,7 +331,7 @@
 //---------------------------------------------
 // Small devices (landscape phones, 576px and up) 
 //---------------------------------------------
-@media (min-width: 576px) {
+@media only screen and (min-width: 576px) {
 
     // page one
     .main-intro {
@@ -324,49 +374,60 @@
     }
 
     .about {
+        // border: 2px solid red;
+        grid-template-areas:
+        "photo photo"
+        "call abt";
         position: absolute;
         top: 0px;
         right: 0;
         width: 70vw;
-        height: 100%;
-        grid-template-rows: 200px auto;
+        height: 100vh;
         grid-gap: 0;
 
         .short-description {
+            // border: 2px solid yellow;
             position: absolute;
-            grid-area: none;
+            grid-area: abt;
             align-self: end;
             z-index: 2;
             background-color: $pale-pink;
-            margin-left: 70%;
+            margin: 20% 20% 10% 20%;
             font-size: 1rem;
-            padding: 10px;
-            height: 50%;
-        }
-
-        img {
-            position: absolute;
-            top: 0;
-            right: 40%;
-            z-index: 1;
+            padding: 15px;
+            // height: 50%;
+            // max-height: 450px;
         }
 
         .profilePhoto {
+            // border: 2px solid yellow;
+            position: absolute;
+            grid-area: photo;
+            top: 0;
+            height: 100vh;
+            // right: 40%;
+            z-index: 1;
 
-            #two,
-            #one {
-                height: 300px;
-                width: 255px;
-            }
+            // #two,
+            // #one {
+            //     height: 300px;
+            //     width: 255px;
+            //     height: 100vh;
+            //     width: auto;
+            // }
         }
 
         .goodbye {
-            width: 50%;
+            grid-area: call;
+            // position: absolute;
+            // border: 2px solid yellow;
+            // width: 40%;
             margin-left: 10%;
             font-size: 1.2rem;
             background-color: $egg-shell;
             padding: 15px;
             z-index: 2;
+            // max-height: 450px;
         }
     }
 
@@ -376,9 +437,9 @@
         top: 40%;
         margin: 0;
 
-        button {
-            width: 170px;
-        }
+        // button {
+        //     width: 170px;
+        // }
 
         .social-buttons {
             .fa-3x {
@@ -393,7 +454,7 @@
 // // Medium devices (tablets, 768px and up)
 //-----------------------------------------------
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
 
     //page one
     .main-intro {
@@ -440,37 +501,38 @@
         .short-description {
             font-size: 1.3rem;
             padding: 15px;
-            margin-left: 60%;
+            // margin-left: 50%;
             line-height: 1.5;
+            // margin: 10% 15%;
 
-            .hidden {
-                visibility: visible;
-                overflow: visible;
-            }
+            // .hidden {
+            //     visibility: visible;
+            //     overflow: visible;
+            // }
         }
 
+        // .profilePhoto {
+        //     #two {
+        //         height: 400px;
+        //         width: 335px;
+        //     }
 
-        .profilePhoto {
-            #two {
-                height: 550px;
-                width: 465px;
-            }
-
-            #one {
-                height: 550px;
-                width: auto;
-            }
-        }
+        //     #one {
+        //         height: 400px;
+        //         width: auto;
+        //     }
+        // }
 
         .goodbye {
             font-size: 1.9rem;
             margin-left: 0;
-            margin-top: 30%;
+            // margin-top: 30%;
         }
     }
 
     .contact {
         padding-left: 30px;
+        top: 30%;
 
         button {
             width: 240px;
@@ -485,10 +547,25 @@
     }
 }
 
+
+
+@media only screen and (min-width: 768px) and (orientation : portrait)  {
+    // page three
+
+    .about {
+        width: 60vw;
+        height: 80vh;
+
+        .profilePhoto {
+            height: 70vh;
+        }
+    }
+}
+
 // //--------------------------------------------
 // // Large devices (desktops, 992px and up)
 // //--------------------------------------------
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
 
     //page one
     .main-intro {
@@ -530,21 +607,27 @@
 
         .project {
             border-bottom: 2px solid $brown;
-            padding-bottom: 40px;
+            // padding-bottom: 40px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 0 5%;
+            padding: 2% 5%;
 
             .end {
                 flex-direction: column;
                 align-self: flex-end;
                 justify-content: flex-start;
 
-                p {
+                p, .project-icons {
                     font-size: 1.1rem;
                     text-align: right;
+
+                    .fa-2x {
+                        margin: 3% 0 3% 3%;
+                    }
                 }
+
+
             }
 
             .start {
@@ -553,9 +636,13 @@
                 align-self: flex-end;
                 justify-content: start;
 
-                p {
+                p, .project-icons {
                     text-align: start;
                     font-size: 1.1em;
+
+                    .fa-2x {
+                        margin: 3% 3% 3% 0;
+                    }
                 }
             }
 
@@ -611,32 +698,42 @@
     .about {
         .short-description {
             font-size: 1.3rem;
-            padding: 15px;
-            height: 60%;
+            // margin: 0 15% 20% 15%;
+            padding: 5% 5% 30% 5%;
+            margin-top: 0;
+            // margin-bottom: 20%;
+            // align-self: start;
+            // height: 100%;
+
+            // .hidden {
+            //     visibility: visible;
+            //     overflow: visible;
+            // }
         }
 
-        img {
-            right: 45%;
-        }
+        // img {
+        //     right: 45%;
+        // }
 
-        .profilePhoto {
-            #two {
-                height: 550px;
-                width: 460px;
-            }
+        // .profilePhoto {
+        //     #two {
+        //         height: 550px;
+        //         width: 460px;
+        //     }
 
-            #one {
-                height: 550px;
-                width: auto;
-            }
-        }
+        //     #one {
+        //         height: 550px;
+        //         width: auto;
+        //     }
+        // }
 
         .goodbye {
             font-size: 2rem;
+            bottom: 0;
             margin-left: 5%;
-            width: 45%;
-            margin-top: 20%;
-            padding: 2% 2% 0 2%
+            // width: 45%;
+            // margin-top: 20%;
+            padding: 6%;
         }
     }
 
@@ -659,7 +756,7 @@
 // //----------------------------------------------------------
 // // // Extra large devices (large desktops, 1200px and up)
 // //----------------------------------------------------------
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
 
     // page one
     .main-intro {
@@ -691,17 +788,25 @@
         }
     }
 
-
     .projects {
         padding: 0 10%;
         row-gap: 25px;
 
         .project {
+
+            .project-description {
+                min-width: 350px;
+            }
+
+            img {
+                width: 350px;
+            }
+
             .end {
-                margin-right: 27%;
+                margin-right: 0%;
 
                 p {
-                    font-size: 1.3rem;
+                    font-size: 1.5em;
                 }
             }
 
@@ -711,9 +816,10 @@
 
                 p {
                     padding: 0;
-                    font-size: 1.3em;
+                    font-size: 1.5em;
                 }
             }
+
             .button-right {
                 width: 100px;
                 margin: 15px 0 0 15px;
@@ -739,36 +845,43 @@
     }
 
     .about {
+        height: 90vh;
         .short-description {
             font-size: 1.57rem;
-            padding: 40px;
-            height: 60%;
+            margin-bottom: 0;
+            // padding: 40px;
+            // height: 60%;
             line-height: 1.6;
-            margin-left: 65%;
-        }
+            // margin-left: 65%;
 
-        img {
-            right: 60%;
-        }
-
-        .profilePhoto {
-            #two {
-                height: 650px;
-                width: 549px;
-            }
-
-            #one {
-                height: 650px;
-                width: auto;
+            .hidden {
+                visibility: visible;
+                overflow: visible;
             }
         }
+
+        // img {
+        //     right: 60%;
+        // }
+
+        // .profilePhoto {
+        //     #two {
+        //         height: 650px;
+        //         width: 549px;
+        //     }
+
+        //     #one {
+        //         height: 650px;
+        //         width: auto;
+        //     }
+        // }
 
         .goodbye {
             font-size: 2.5rem;
-            margin-left: 5%;
-            width: 35%;
+            margin-left: 10%;
+            // width: 35%;
             line-height: 1;
-            padding: 3% 3% 0 3%
+            padding: 7%;
         }
     }
 
@@ -790,47 +903,114 @@
     }
 }
 
-@media (min-width: 1700px) {
+@media only screen and (min-width: 1700px) {
+
+    // page one
+    .main-intro {
+        .intro-hello {
+            .greeting {
+                font-size: 9em;
+            }
+        }
+
+        .intro-description {
+            img {
+                width: 350px;
+                height: 350px;
+            }
+
+            h2 {
+                font-size: 3.2em;
+            }
+        }
+    }
+
 
     //page two
     .projects-page {
         height: fit-content;
+
         .projects {
             padding: 0 15%;
 
             .project {
-                padding: 0 5%;
-    
-                .end {
-                    margin-right: 36%;
+
+                padding: 2% 5%;
+
+                img {
+                    width: 400px;
                 }
-    
-                .start {
-                    margin-right: 2%;
+
+                
+                .project-description {
+                    p {
+                        font-size: 30px;
+                    }
+                    .project-icons {
+                        .fa-2x {
+                            font-size: 50px;
+                        }
+                    }
                 }
+
+                .buttons {
+                    button {
+                        width: 120px;
+
+                        a {
+                            font-size: 25px;
+                        }
+                    }
+                    
+                    
+                }
+
+                // .end {
+                //     margin-right: 36%;
+                // }
+
+                // .start {
+                //     margin-right: 2%;
+                // }
             }
         }
-        
+
     }
 
     // page three
     .about {
+        .short-description {
+            margin-bottom: 0;
+            font-size: 2em;
+        }
         .goodbye {
-            font-size: 2.7rem;
+            font-size: 3em;
             line-height: 1.2;
-            padding: 3% 3% 0 3%
+            margin-left: 20%;
+            margin-right: 5%;
+            // padding: 3% 3% 0 3%
         }
 
-        .profilePhoto {
-            #two {
-                height: 700px;
-                width: 599px;
-            }
+        // .profilePhoto {
+        //     #two {
+        //         height: 700px;
+        //         width: 599px;
+        //     }
 
-            #one {
-                height: 700px;
-                width: auto;
+        //     #one {
+        //         height: 700px;
+        //         width: auto;
+        //     }
+        // }
+    }
+
+    .contact {
+        button {
+            width: 350px;
+            a {
+                font-size: 30px;
             }
         }
+        
     }
 }
